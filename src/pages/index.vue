@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    <h1 class="title">Sort strings as {{ strings }}.</h1>
     <div class="levelSelector">
       <button @click="setCount(1)">easy</button>
       <button @click="setCount(2)">medium</button>
@@ -39,7 +40,7 @@ export default Vue.extend({
         minute: '2-digit',
         hour12: false
       })
-      const [wday, ymd, time] = dateString.split(', ')
+      const [wday, ymd] = dateString.split(', ')
       const yyyymmdd = ymd.replace(/[^\d]/g, '')
       return [
         `${wday},`,
@@ -71,6 +72,6 @@ export default Vue.extend({
 .levelSelector {
   display: flex;
   flex-direction: row;
-  margin-bottom: 50px;
+  margin: 50px;
 }
 </style>
